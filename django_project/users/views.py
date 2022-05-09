@@ -5,9 +5,8 @@
 # https://docs.djangoproject.com/en/4.0/topics/http/shortcuts/#redirect
 
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.urls import reverse
+from .form import UserRegisterForm
 
 # Create your views here.
 
@@ -16,7 +15,7 @@ def register(request):
     # If it gets a POST request then it instantiates a user creation form with that POST data
     if request.method == 'POST':
         # Create a form that has the request POST data:
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
 
         if form.is_valid():
             form.save()
@@ -25,5 +24,5 @@ def register(request):
             return redirect('blog-home')
     # With any other request it creates an empty user creation form
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
