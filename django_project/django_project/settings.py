@@ -155,4 +155,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'django.blog.project.laila@gmail.com'
 EMAIL_HOST_PASSWORD = 'rssmtlmoeawjpgak'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 django_heroku.settings(locals())
