@@ -17,6 +17,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='post_img', blank=True)
 
     # https://docs.djangoproject.com/en/4.0/ref/models/fields/#foreignkey
     # https://docs.djangoproject.com/en/4.0/topics/db/examples/many_to_one/
