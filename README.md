@@ -1,3 +1,5 @@
 # Blog Project with Django
 
-Blog project made with
+Project has been deployed to Heroku:
+
+[Django Blog](https://django-blog-project-laila.herokuapp.com/)
